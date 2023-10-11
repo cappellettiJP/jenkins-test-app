@@ -1,19 +1,15 @@
 pipeline {
-  agent {
-    node {
-      label 'node'
+    agent {
+        docker {
+            image 'node:18.18.0-alpine3.18'
+            args '-p 3000:3000'
+        }
     }
-
-  }
-  stages {
-    stage('build') {
-      steps {
-        git(branch: 'main', url: 'https://github.com/cappellettiJP/jenkins-test-app.git')
-      }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
     }
-
-  }
-  environment {
-    dev = '1'
-  }
 }
