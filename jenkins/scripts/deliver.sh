@@ -1,9 +1,9 @@
-sudo set -x
+set -x
 npm run build
-sudo set +x
+set +x
 
-sudo set -x
+set -x
 npm run preview &
 sleep 1
 echo $! > .pidfile
-sudo set +x
+set +x
