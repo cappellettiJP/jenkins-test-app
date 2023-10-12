@@ -12,7 +12,7 @@ pipeline {
             }
         }
     }
-    stage {
+    stage('Deliver') {
         steps {
             sh './jenkins/deliver.sh'
             input messaje: 'Finished using the web site? (Click Proceed)'
