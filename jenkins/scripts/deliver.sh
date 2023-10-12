@@ -1,9 +1,9 @@
 set -x
-pnpm run build
+npm run build
 set +x
 
 set -x
-pnpm start &
+npm run preview &
 sleep 1
 echo $! > .pidfile
 set +x
